@@ -53,6 +53,7 @@ Here are several scenarios with corresponding JSON payloads to test the AI's res
 
 Description: The satellite has just been deployed. All systems are new and telemetry readings are perfect.  
 Expected AI Response: Nominal status, high RUL, and "Nominal Operations" recommendation.  
+```
 {  
     "battery\_voltage": 14.0,  
     "battery\_temperature": 25.0,  
@@ -68,11 +69,12 @@ Expected AI Response: Nominal status, high RUL, and "Nominal Operations" recomme
     "module\_temperature": 22.0,  
     "radiation\_dose": 5.0  
 }
-
+```
 ### **Scenario 2: Normal Wear and Tear (Mid-Life)**
 
 Description: The satellite has been in orbit for some time. Minor degradation is visible in the battery and cycle counts are higher, but all systems are still well within safe operating limits.  
 Expected AI Response: Nominal status, slightly reduced RUL, "Nominal Operations" recommendation.  
+```
 {  
     "battery\_voltage": 13.6,  
     "battery\_temperature": 29.0,  
@@ -88,11 +90,12 @@ Expected AI Response: Nominal status, slightly reduced RUL, "Nominal Operations"
     "module\_temperature": 26.0,  
     "radiation\_dose": 45.0  
 }
-
+```
 ### **Scenario 3: Developing Issue (Warning)**
 
 Description: The battery voltage is consistently low and its temperature is high, indicating accelerated degradation. The RUL is dropping faster than expected.  
 Expected AI Response: Warning status, lower RUL, and a recommendation to "Enter Safe Mode".  
+```
 {  
     "battery\_voltage": 12.8,  
     "battery\_temperature": 36.0,  
@@ -108,11 +111,12 @@ Expected AI Response: Warning status, lower RUL, and a recommendation to "Enter 
     "module\_temperature": 31.0,  
     "radiation\_dose": 80.0  
 }
-
+```
 ### **Scenario 4: Anomaly Event (Warning)**
 
 Description: A sudden, unexpected spike in the gyroscope drift rate has occurred. While not immediately critical, it deviates from the norm and could indicate a control system fault.  
 Expected AI Response: Anomaly Detected flag, Warning status, and recommendation to "Enter Safe Mode and Alert Ground Control".  
+```
 {  
     "battery\_voltage": 13.5,  
     "battery\_temperature": 30.0,  
@@ -128,11 +132,12 @@ Expected AI Response: Anomaly Detected flag, Warning status, and recommendation 
     "module\_temperature": 27.0,  
     "radiation\_dose": 65.0  
 }
-
+```
 ### **Scenario 5: Imminent Failure (Critical)**
 
 Description: Multiple indicators are critical. The battery is failing, the processor is overheating, and radiation dose is high. The predicted RUL is very low.  
 Expected AI Response: Critical status, very low RUL, and an urgent recommendation to "Initiate De-orbit Burn".  
+```
 {  
     "battery\_voltage": 12.1,  
     "battery\_temperature": 40.0,  
@@ -148,3 +153,4 @@ Expected AI Response: Critical status, very low RUL, and an urgent recommendatio
     "module\_temperature": 35.0,  
     "radiation\_dose": 180.0  
 }  
+```
